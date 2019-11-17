@@ -11,13 +11,6 @@ testing_dir='/home/deepakjnv880/pattern recognition assignment/pca/testing/'
 result_dir='/home/deepakjnv880/pattern recognition assignment/pca/result/'
 
 
-def add_noise(all_image_vector, level):
-    for i in range(len(all_image_vector)):
-        noise = np.random.normal(0, 10, 28*28)
-        all_image_vector[i] = np.add(all_image_vector[i], float(level)*noise)
-    return all_image_vector
-
-
 def reconstruction(image_vector,eigen_vectors,score,mean_vector,fname):
     print("i am in reconstrdcutoin")
     print("==",np.shape(eigen_vectors))
