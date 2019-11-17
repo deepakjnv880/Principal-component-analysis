@@ -6,9 +6,9 @@ import os
 import random
 # np.set_printoptions(threshold=sys.maxsize) # for showing full numpy array without truncation
 # np.set_printoptions(suppress=True)# for suppreesing sciecmtific printing
-train_dir='/home/deepakjnv880/pattern recognition assignment/pca/training/'
-testing_dir='/home/deepakjnv880/pattern recognition assignment/pca/testing/'
-result_dir='/home/deepakjnv880/pattern recognition assignment/pca/result/'
+train_dir='training/'
+testing_dir='testing/'
+result_dir='result/'
 
 
 def reconstruction(image_vector,eigen_vectors,score,mean_vector,fname):
