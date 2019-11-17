@@ -17,10 +17,6 @@ def add_noise(all_image_vector, level):
         all_image_vector[i] = np.add(all_image_vector[i], float(level)*noise)
     return all_image_vector
 
-def get_image(reconstructed_image_vector,fname):
-    image_matrix=np.reshape(reconstructed_image_vector,(28, 28))
-    img = Image.fromarray(image_matrix, 'L')
-    img.save(result_dir+fname)
 
 def reconstruction(image_vector,eigen_vectors,score,mean_vector,fname):
     print("i am in reconstrdcutoin")
@@ -52,6 +48,11 @@ def convert_all_image_to_vector(digit):
         all_image_vector.append(image)
         number_of_image+=1
     return number_of_image,all_image_vector,file_names
+
+def get_image(reconstructed_image_vector,fname):
+    image_matrix=np.reshape(reconstructed_image_vector,(28, 28))
+    img = Image.fromarray(image_matrix, 'L')
+    img.save(result_dir+fname)
 
 def main():
     print("In how many dimension you want to reduce your feature vector :")
