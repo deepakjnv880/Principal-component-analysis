@@ -47,6 +47,13 @@ def get_image(reconstructed_image_vector,fname):
     img = Image.fromarray(image_matrix, 'L')
     img.save(result_dir+fname)
 
+
+def add_noise(all_image_vector, level):
+    for i in range(len(all_image_vector)):
+        noise = np.random.normal(0, 10, 28*28)
+        all_image_vector[i] = np.add(all_image_vector[i], float(level)*noise)
+    return all_image_vector
+
 def main():
     print("In how many dimension you want to reduce your feature vector :")
     number_of_principal_component=int(input())
